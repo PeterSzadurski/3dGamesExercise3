@@ -29,33 +29,39 @@ public class scr_player : MonoBehaviour
 
     private RaycastHit _Scanner;
 
+    private Rigidbody _RB;
+
     [SerializeField]
     private UnityEngine.UI.Image _Crosshair;
 
+
+    private float _AxisV;
+    private float _AxisH;
     void Start()
     {
         _Anim = this.GetComponent<Animator>();
+        _RB = this.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        int v, h;
+        
 
         // mouse Y clamp
         float mY = (Input.GetAxisRaw("Mouse Y")) * _MouseSensitivity;
         _XRot += mY;
         _XRot = Mathf.Clamp(_XRot, _MinRotX, _MaxRotX);
 
-        v = (int)(Input.GetAxisRaw("Vertical"));
-        h = (int)(Input.GetAxisRaw("Horizontal"));
+        _AxisV = (Input.GetAxisRaw("Vertical"));
+        _AxisH = (Input.GetAxisRaw("Horizontal"));
 
         // setup the proper animations
-        _Anim.SetInteger("AxisV", v);
-        _Anim.SetInteger("AxisH", h);
+        _Anim.SetInteger("AxisV", (int)_AxisV);
+        _Anim.SetInteger("AxisH", (int)_AxisH);
 
         // player movement
-        this.gameObject.transform.Translate(new Vector3(h * Time.deltaTime, 0, v * Time.deltaTime));
+       // this.gameObject.transform.Translate(new Vector3(h * Time.deltaTime, 0, v * Time.deltaTime));
         this.transform.Rotate(0, Input.GetAxisRaw("Mouse X") * _MouseSensitivity, 0);
 
         // Rotate Camera Up/Down
@@ -90,6 +96,14 @@ public class scr_player : MonoBehaviour
 
         }
     }
-
+    void FixedUpdate()
+    {
+        // move player
+        Vector3 move = new Vector3(_AxisH * Time.deltaTime, 0, _AxisV * Time.deltaTime);
+        move = transform.TransformDirection(move);
+        _RB.MovePosition(transform.position + move);
+    }
 }
+
+
 
