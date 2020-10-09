@@ -148,10 +148,6 @@ public class scr_player : MonoBehaviour
 
     void ChangeCamera(CamEnum cam)
     {
-        /*_Cam.gameObject.SetActive(false);
-        _Cam = _Cameras[cam];
-        _Cam.gameObject.SetActive(true);
-        */
         _VirtCamera.Priority = 10;
         _VirtCamera = _Cameras[cam];
         _VirtCamera.Priority = 20;
