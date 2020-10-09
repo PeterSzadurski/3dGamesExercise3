@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Interactable
+  - FirstPersonCam
+  - ThirdPersonCam
+  - LeftCam
+  - RightCam
   layers:
   - Default
   - TransparentFX
