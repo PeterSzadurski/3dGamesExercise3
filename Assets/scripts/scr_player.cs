@@ -80,8 +80,7 @@ public class scr_player : MonoBehaviour
 
         _CurrentEquipment = Equipment.EquipEnum.Nothing;
         _Equipment.Add(Equipment.EquipEnum.Nothing);
-        _Equipment.Add(Equipment.EquipEnum.Pistol);
-        _Equipment.Add(Equipment.EquipEnum.Katana);
+
 
         // _Cameras.Add(CamEnum.FirstPerson, GameObject.FindGameObjectWithTag("FirstPersonCam").GetComponent<Camera>());
         // _Cameras[CamEnum.FirstPerson].gameObject.SetActive(false);
@@ -146,12 +145,15 @@ public class scr_player : MonoBehaviour
 
         //}
         // Crosshair
-        if (Physics.Raycast(_FirstPersonCam.transform.position, _FirstPersonCam.transform.forward, out _Scanner, 5f) && (_Scanner.transform.gameObject.tag == "Interactable"))
+
+
+        if (Physics.Raycast(_FirstPersonCam.transform.position, _FirstPersonCam.transform.forward, out _Scanner, 30f) && (_Scanner.transform.gameObject.tag == "Interactable"))
         {
+
             _Crosshair.color = Color.green;
-            if (Input.GetButtonDown("Fire1"))
+            if (Input.GetButtonDown("Interact"))
             {
-                _Scanner.transform.gameObject.GetComponent<scr_door>().enabled = true;
+                _Scanner.transform.gameObject.GetComponent<scr_Interact>().Interact();
             }
         }
         else
@@ -188,16 +190,24 @@ public class scr_player : MonoBehaviour
                     _KatanaHand.SetActive(false);
                     _PistolHand.SetActive(false);
                     this.GetComponent<scr_player_gun>().enabled = false;
-
+                    this.GetComponent<scr_player_sword>().enabled = false;
+                    if (_Equipment.Contains(Equipment.EquipEnum.Pistol))
+                    {
+                        _PistolHolster.SetActive(true);
+                    }
+                    if (_Equipment.Contains(Equipment.EquipEnum.Katana))
+                    {
+                        _KatanaHolster.SetActive(true);
+                    }
                     break;
                 case 1:
                     _KatanaHand.SetActive(true);
                     _KatanaHolster.SetActive(false);
+                    this.GetComponent<scr_player_sword>().enabled = true;
                     if (_Equipment.Contains(Equipment.EquipEnum.Pistol))
                     {
                         _PistolHand.SetActive(false);
                         this.GetComponent<scr_player_gun>().enabled = false;
-                    this.GetComponent<scr_player_sword>().enabled = true;
                         _PistolHolster.SetActive(true);
                     }
                     break;
@@ -233,7 +243,25 @@ public class scr_player : MonoBehaviour
     }
     */
 
+    public bool AddEquipment(Equipment.EquipEnum equip)
+    {
+        if ((!_Equipment.Contains(equip)))
+        {
+            switch (equip)
+            {
+                case Equipment.EquipEnum.Katana:
+                    _KatanaHolster.SetActive(true);
+                    break;
+                case Equipment.EquipEnum.Pistol:
+                    _PistolHolster.SetActive(true);
+                    break;
 
+            }
+            _Equipment.Add(equip);
+            return true;
+        }
+        return false;
+    }
 }
 
 

@@ -12,7 +12,7 @@ public class scr_door : MonoBehaviour
 
     private GameObject _Hinge;
     private float _TimePassed = 0;
-
+    [SerializeField]
     void Start()
     {
         // _Hinge Empty Object needed to move rotation axis

@@ -15,7 +15,7 @@ public class scr_player_sword : MonoBehaviour
     {
         if (Input.GetButton("Fire1"))
         {
-            _Anim.SetBool("slash", true);
+            _Anim.Play("Slash");
         }
     }
 }
