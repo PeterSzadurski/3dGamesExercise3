@@ -10,6 +10,8 @@ public class scr_player : MonoBehaviour
     private Animator _Anim;
     [SerializeField]
     private Camera _FirstPersonCam;
+    [SerializeField]
+    private Camera _ThirdPersonCam;
 
     private CinemachineVirtualCameraBase _VirtCamera;
 
@@ -80,6 +82,7 @@ public class scr_player : MonoBehaviour
 
         _CurrentEquipment = Equipment.EquipEnum.Nothing;
         _Equipment.Add(Equipment.EquipEnum.Nothing);
+        _Equipment.Add(Equipment.EquipEnum.Pistol);
 
 
         // _Cameras.Add(CamEnum.FirstPerson, GameObject.FindGameObjectWithTag("FirstPersonCam").GetComponent<Camera>());
@@ -182,7 +185,7 @@ public class scr_player : MonoBehaviour
 
     void SwitchEquipment(int i)
     {
-        if (_Equipment.Contains((Equipment.EquipEnum)i))
+        if (_Equipment.Contains((Equipment.EquipEnum)i) && _ThirdPersonCam.transform.localPosition.x == 0)
         {
             switch (i)
             {
