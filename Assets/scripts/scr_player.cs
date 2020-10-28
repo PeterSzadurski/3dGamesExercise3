@@ -82,23 +82,8 @@ public class scr_player : MonoBehaviour
 
         _CurrentEquipment = Equipment.EquipEnum.Nothing;
         _Equipment.Add(Equipment.EquipEnum.Nothing);
-        _Equipment.Add(Equipment.EquipEnum.Pistol);
 
 
-        // _Cameras.Add(CamEnum.FirstPerson, GameObject.FindGameObjectWithTag("FirstPersonCam").GetComponent<Camera>());
-        // _Cameras[CamEnum.FirstPerson].gameObject.SetActive(false);
-
-        //_Cameras.Add(CamEnum.Left, GameObject.FindGameObjectWithTag("LeftCam").GetComponent<CinemachineVirtualCamera>());
-
-        // _Cameras.Add(CamEnum.Right, GameObject.FindGameObjectWithTag("RightCam").GetComponent<CinemachineVirtualCamera>());
-
-        // _Cameras.Add(CamEnum.ThirdPerson, GameObject.FindGameObjectWithTag("ThirdPersonCam").GetComponent<CinemachineVirtualCameraBase>());
-
-        //   _VirtCamera = _Cameras[CamEnum.ThirdPerson];
-
-
-        //_FirstPersonCam.gameObject.SetActive(false);
-        // _MainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
 
 
 
@@ -149,6 +134,7 @@ public class scr_player : MonoBehaviour
         //}
         // Crosshair
 
+       // Debug.DrawRay(_CamContainer.transform.position, _CamContainer.transform.forward * 10000, Color.cyan);
 
         if (Physics.Raycast(_FirstPersonCam.transform.position, _FirstPersonCam.transform.forward, out _Scanner, 30f) && (_Scanner.transform.gameObject.tag == "Interactable"))
         {

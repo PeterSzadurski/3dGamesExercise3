@@ -66,11 +66,7 @@ public class scr_player_gun : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && !_ShotFiring)
-        {
-            //_MuzzleFlash.SetActive(true);
-            StartCoroutine(FireShot());
-        }
+
 
         if (Input.GetButtonDown("Fire2"))
         {
@@ -163,5 +159,9 @@ public class scr_player_gun : MonoBehaviour
             _lr.SetPosition(1, _Laser.forward * 5000);
         }
 
+        if (Input.GetButtonDown("Fire1") && !_ShotFiring)
+        {
+            StartCoroutine(FireShot());
+        }
     }
 }

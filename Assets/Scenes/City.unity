@@ -7302,7 +7302,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &615115579
 Transform:
   m_ObjectHideFlags: 0
@@ -7816,7 +7816,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 677294438}
   m_LocalRotation: {x: 0.001418648, y: -0.013451244, z: -0.10487465, w: 0.99439347}
-  m_LocalPosition: {x: -0.15, y: 0, z: 0.01}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1703981948}
@@ -7833,11 +7833,11 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 0.1
   m_Drag: 0
-  m_AngularDrag: 0.005
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 2
 --- !u!114 &677294441
 MonoBehaviour:
@@ -7851,6 +7851,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3dd258a458bb6a4db05a1cec6b88028, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _RemoveTime: 15
 --- !u!136 &677294442
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -7887,10 +7888,10 @@ TrailRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 677294438}
   m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_MotionVectors: 0
+  m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
@@ -7914,13 +7915,13 @@ TrailRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -122108139
-  m_SortingLayer: -1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.5
+  m_Time: 0.1
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.07
+    widthMultiplier: 0.05
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -7934,8 +7935,8 @@ TrailRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.85932726
-        value: 0.041666627
+        time: 0.6969763
+        value: 0.03157407
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -7947,7 +7948,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 0.687739, b: 0, a: 1}
+      key0: {r: 1, g: 1, b: 1, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -11016,7 +11017,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20686
+  m_Name: pb_Mesh37612
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12936,7 +12937,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1422498356}
   m_LocalRotation: {x: -0.06890299, y: 0.716821, z: -0.07964419, w: 0.68925816}
-  m_LocalPosition: {x: 1.579, y: 0.969, z: -0.201}
+  m_LocalPosition: {x: 0.87, y: 0.58, z: 0.03}
   m_LocalScale: {x: 0.10000003, y: 0.099999994, z: 0.10000003}
   m_Children:
   - {fileID: 677294439}
@@ -16599,7 +16600,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1703981947}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.14, y: -4.35, z: -6.57}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 677294439}
@@ -21994,8 +21995,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.14, y: 1.6, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2.8760452, y: 3.1449442, z: 4.34312}
+  m_Center: {x: -0.36802185, y: 0.7724702, z: 1.6715549}
 --- !u!4 &4782446110537339571
 Transform:
   m_ObjectHideFlags: 0
