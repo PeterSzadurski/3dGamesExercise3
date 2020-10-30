@@ -6,6 +6,8 @@ public class scr_CollisionDamage : MonoBehaviour
 {
     [SerializeField]
     private float _CollisionDamage;
+
+    public bool _Attack;
     void OnCollisionEnter(Collision col)
     {
 
@@ -14,7 +16,7 @@ public class scr_CollisionDamage : MonoBehaviour
 
     private void Enter(GameObject other)
     {
-        if (other.GetComponent<scr_breakable>() != null)
+        if (other.GetComponent<scr_breakable>() != null && _Attack)
         {
             other.GetComponent<scr_breakable>().TakeDamage(_CollisionDamage);
         }

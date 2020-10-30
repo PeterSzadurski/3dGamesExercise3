@@ -62,6 +62,7 @@ public class scr_player_gun : MonoBehaviour
         _Spine = _Anim.GetBoneTransform(HumanBodyBones.Spine);
         _lr = _Laser.GetComponent<LineRenderer>();
         _ThirdPersonDefault = _ThirdPersonCam.transform.localPosition;
+
     }
 
     void Update()
@@ -96,6 +97,12 @@ public class scr_player_gun : MonoBehaviour
 
         }
 
+
+        if (Input.GetButtonDown("Fire1") && !_ShotFiring)
+        {
+            StartCoroutine(FireShot());
+        }
+
     }
 
     private IEnumerator FireShot()
@@ -112,6 +119,7 @@ public class scr_player_gun : MonoBehaviour
         _ShotFiring = false;
         _MuzzleLight.SetActive(false);
         _MuzzleFlash.Stop(true);
+
         yield return null;
     }
     void LateUpdate()
@@ -159,9 +167,5 @@ public class scr_player_gun : MonoBehaviour
             _lr.SetPosition(1, _Laser.forward * 5000);
         }
 
-        if (Input.GetButtonDown("Fire1") && !_ShotFiring)
-        {
-            StartCoroutine(FireShot());
-        }
     }
 }
