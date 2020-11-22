@@ -11,7 +11,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{B34C83A4-54DE-1DE2-E058-5F52533A53C2}</ProjectGuid>
+    <ProjectGuid>{BED7488F-5EF8-2E4B-E1A7-9DD34DCD5557}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -72,7 +72,12 @@
      <Compile Include="Assets\scr_bullet.cs" />
      <Compile Include="Assets\scr_bullet_collision.cs" />
      <Compile Include="Assets\scr_rotateMinimap.cs" />
+     <Compile Include="Assets\scripts\classes\cls_Sense.cs" />
+     <Compile Include="Assets\scripts\classes\enum_SmartObject.cs" />
+     <Compile Include="Assets\scripts\classes\scr_Perspective.cs" />
+     <Compile Include="Assets\scripts\classes\scr_Touch.cs" />
      <Compile Include="Assets\scripts\Equipment.cs" />
+     <Compile Include="Assets\scripts\scr_carAI.cs" />
      <Compile Include="Assets\scripts\scr_CollisionDamage.cs" />
      <Compile Include="Assets\scripts\scr_door.cs" />
      <Compile Include="Assets\scripts\scr_EqupmentManager.cs" />
@@ -83,6 +88,7 @@
      <Compile Include="Assets\scripts\scr_player_gun.cs" />
      <Compile Include="Assets\scripts\scr_player_sword.cs" />
      <Compile Include="Assets\scripts\scr_player_weapon_pickup.cs" />
+     <Compile Include="Assets\scripts\scr_Traffic_Light.cs" />
      <Compile Include="Assets\unity-chan!\Unity-chan! Model\Scripts\AutoBlink.cs" />
      <Compile Include="Assets\unity-chan!\Unity-chan! Model\Scripts\CameraController.cs" />
      <Compile Include="Assets\unity-chan!\Unity-chan! Model\Scripts\FaceUpdate.cs" />
@@ -142,43 +148,43 @@
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
  <Reference Include="Unity.Timeline.Editor">
- <HintPath>F:/Unity/3dGameAssign1/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ <HintPath>F:/Unity/3dGamesExercise3/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Cinemachine">
- <HintPath>F:/Unity/3dGameAssign1/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+ <HintPath>F:/Unity/3dGamesExercise3/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VSCode.Editor">
- <HintPath>F:/Unity/3dGameAssign1/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+ <HintPath>F:/Unity/3dGamesExercise3/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
- <HintPath>F:/Unity/3dGameAssign1/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
+ <HintPath>F:/Unity/3dGamesExercise3/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>F:/Unity/3dGameAssign1/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>F:/Unity/3dGamesExercise3/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>F:/Unity/3dGameAssign1/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ <HintPath>F:/Unity/3dGamesExercise3/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline">
- <HintPath>F:/Unity/3dGameAssign1/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+ <HintPath>F:/Unity/3dGamesExercise3/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
  </Reference>
  <Reference Include="Unity.CollabProxy.Editor">
- <HintPath>F:/Unity/3dGameAssign1/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+ <HintPath>F:/Unity/3dGamesExercise3/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Rider.Editor">
- <HintPath>F:/Unity/3dGameAssign1/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+ <HintPath>F:/Unity/3dGamesExercise3/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
  <Reference Include="com.unity.cinemachine.editor">
- <HintPath>F:/Unity/3dGameAssign1/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+ <HintPath>F:/Unity/3dGamesExercise3/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.ProBuilder.AddOns.Editor">
- <HintPath>F:/Unity/3dGameAssign1/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
+ <HintPath>F:/Unity/3dGamesExercise3/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>F:/Unity/3dGameAssign1/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>F:/Unity/3dGamesExercise3/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
- <HintPath>F:/Unity/3dGameAssign1/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>F:/Unity/3dGamesExercise3/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.11f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
