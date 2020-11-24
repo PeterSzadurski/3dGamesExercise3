@@ -27,7 +27,6 @@ public class scr_Traffic_Light : MonoBehaviour
     }
     void Start()
     {
-        Debug.Log("Traffic Start");
         StartCoroutine(TrafficLightRoutine());
     }
 }

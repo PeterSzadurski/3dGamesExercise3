@@ -71,12 +71,16 @@
      <Compile Include="Assets\scr_breakable.cs" />
      <Compile Include="Assets\scr_bullet.cs" />
      <Compile Include="Assets\scr_bullet_collision.cs" />
+     <Compile Include="Assets\scr_npc_properties.cs" />
      <Compile Include="Assets\scr_rotateMinimap.cs" />
+     <Compile Include="Assets\scripts\classes\cls_AI_Action.cs" />
      <Compile Include="Assets\scripts\classes\cls_Sense.cs" />
      <Compile Include="Assets\scripts\classes\enum_SmartObject.cs" />
      <Compile Include="Assets\scripts\classes\scr_Perspective.cs" />
      <Compile Include="Assets\scripts\classes\scr_Touch.cs" />
      <Compile Include="Assets\scripts\Equipment.cs" />
+     <Compile Include="Assets\scripts\NPC AI\AI Actions\AI_Wander.cs" />
+     <Compile Include="Assets\scripts\NPC AI\TOUCH_AND_TURN.cs" />
      <Compile Include="Assets\scripts\scr_carAI.cs" />
      <Compile Include="Assets\scripts\scr_CollisionDamage.cs" />
      <Compile Include="Assets\scripts\scr_door.cs" />
@@ -113,6 +117,7 @@
      <None Include="Assets\JMO Assets\WarFX\_Effects\MuzzleFlashes\!MuzzleFlash Differences.txt" />
      <None Include="Assets\JMO Assets\WarFX\Shaders\WFX_S Smoke Scroll.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
+     <None Include="Assets\Trashcans\README_Import_to_2018-HDRP.txt" />
      <None Include="Assets\JMO Assets\WarFX\Shaders\WFX_S Add Scroll.shader" />
      <None Include="Assets\JMO Assets\WarFX\!WarFX Readme.txt" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
@@ -717,6 +722,16 @@
  <Reference Include="Boo.Lang">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.11f1/Editor/Data/MonoBleedingEdge/lib/mono/unityscript/Boo.Lang.dll</HintPath>
  </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="NavMeshComponentsEditor.csproj">
+      <Project>{4907C79D-B953-68B2-3777-E8B78494E753}</Project>
+      <Name>NavMeshComponentsEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="NavMeshComponents.csproj">
+      <Project>{C612B75F-3E76-B7D1-CA94-534E4353AB4E}</Project>
+      <Name>NavMeshComponents</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

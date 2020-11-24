@@ -663,6 +663,14 @@
       <Project>{BED7488F-5EF8-2E4B-E1A7-9DD34DCD5557}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
+    <ProjectReference Include="NavMeshComponentsEditor.csproj">
+      <Project>{4907C79D-B953-68B2-3777-E8B78494E753}</Project>
+      <Name>NavMeshComponentsEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="NavMeshComponents.csproj">
+      <Project>{C612B75F-3E76-B7D1-CA94-534E4353AB4E}</Project>
+      <Name>NavMeshComponents</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

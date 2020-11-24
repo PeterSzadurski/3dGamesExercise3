@@ -12,17 +12,47 @@ public class scr_Perspective : cls_Sense
     [SerializeField]
     private Transform _FollowTransform;
 
+    [SerializeField]
+    private AI_ACTIONS _InitialAction;
+
+    private AiAction aiAction;
+
+    cls_AI_Action cls_AI_Action;
 
     protected override void Initialize()
     {
+        cls_AI_Action = GetComponentInParent<cls_AI_Action>();
+        ResetAction();
+    }
+
+    private void ResetAction()
+    {
+        switch (_InitialAction)
+        {
+            case AI_ACTIONS.DO_NOTHING:
+                aiAction = cls_AI_Action.DoNothing;
+                break;
+            case AI_ACTIONS.WANDER:
+                aiAction = cls_AI_Action.Wander;
+                break;
+            case AI_ACTIONS.CHASE:
+                cls_AI_Action.GetNextPosition();
+                aiAction = cls_AI_Action.Chase;
+                break;
+            default:
+                aiAction = cls_AI_Action.DoNothing;
+                break;
+
+        }
+        Debug.Log("reset");
     }
     protected override void UpdateSense()
     {
         _TimePassed += Time.deltaTime;
-        if (_TimePassed >= _DetectionRate)
-        {
-            DetectSmartObject();
-        }
+
+        DetectSmartObject();
+
+        aiAction();
     }
 
     void DetectSmartObject()
@@ -34,12 +64,11 @@ public class scr_Perspective : cls_Sense
         {
             if (Physics.Raycast(transform.position, _RayDirection, out hit, _ViewDistance))
             {
-                    Debug.Log("Hit Name: " + hit.transform.gameObject.name);
-
                 enum_SmartObject smartObject = hit.collider.GetComponent<enum_SmartObject>();
+                Debug.Log(gameObject.name + ": " + hit.collider.gameObject.name);
                 if (smartObject != null)
                 {
-                    Debug.Log("Smart Object Type: " + smartObject.GetSmartObject());
+
                     if (smartObject.GetSmartObject() == _SmartObject)
                     {
                         switch (_SmartObject)
@@ -54,11 +83,30 @@ public class scr_Perspective : cls_Sense
                                     gameObject.GetComponentInParent<scr_moving_object>().enabled = false;
                                 }
                                 break;
-                            default: break;
+                            case SmartObject.PLAYER:
+                                Debug.Log("Player");
+                                aiAction = cls_AI_Action.Chase;
+                                break;
+                            default:
+
+                                ;
+                                break;
                         }
                     }
                 }
+                else
+                {
+                    ResetAction();
+                }
             }
+            else
+            {
+                ResetAction();
+            }
+        }
+        else
+        {
+            ResetAction();
         }
 
     }
@@ -84,4 +132,9 @@ public class scr_Perspective : cls_Sense
         Debug.DrawLine(transform.position, leftRayPoint, Color.green);
         Debug.DrawLine(transform.position, rightRayPoint, Color.green);
     }
+
+    private delegate void AiAction();
+
+
+
 }
